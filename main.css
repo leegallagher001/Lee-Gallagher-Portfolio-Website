@@ -1,0 +1,213 @@
+/* --- GENERAL --- */
+/* Basic general CSS styling that applies to all pages */
+
+/* BODY */
+
+body {
+    background-color: #98EB33;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+header {
+    display: inline-block;
+    margin: 0px;
+    width: 100%;
+    background-color: #5C5D5C;
+    color: white;
+    font-size: 1.5em;
+}
+
+.header-flexbox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text {
+    display: inline-block;
+    width: 70%;
+    line-height: 0.5em;
+    float: left;
+    margin-left: 25px;
+}
+
+.header-text a:hover {
+    color: #98EB33;
+    transition: color 0.3s ease-in-out;
+}
+
+.header-img {
+    display: inline-block;
+    width: 10%;
+}
+
+.header-img img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    float: right;
+}
+
+/* NAVIGATION BAR */
+
+.hamburger-menu {
+	position: relative;
+	width: 100%;
+	background-color: black;
+	color: white;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#hamburger-icon {
+    color: white;
+    padding: 10px 0px 10px 0px;
+	font-size: 2em;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu {
+	position: absolute;
+	top: 60px;
+	left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu a {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: black;
+    color: white;
+}
+
+#menu a:hover {
+	background-color: #98EB33;
+	color: #5C5D5C;
+	transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.dropdown-menu #menu {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	animation: slideDown 0.5s ease-in-out; /* calls keyframe slideDown (shown below) */
+}
+
+@keyframes slideDown { /* creates slide down effect for dropdown menu */
+    0% {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+/* MAIN CONTENT AREA */
+
+main {
+    display: inline-block;
+    width: 100%;
+    background-color: #5C5D5C;
+    color: white;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* --- HOME PAGE (index.html) --- */
+
+.home-content {
+    display: inline-block;
+    width: 100%;
+}
+
+.home-content h2 {
+    margin-top: 20px;
+}
+
+.home-content h2, p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* --- RESPONSIVES --- */
+/* CSS styling for mobile elements to accomodate multiple screen sizes */
+
+@media screen and (min-width: 800px) {
+
+    #hamburger-icon {
+        display: none;
+        padding: 0;
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        top: 0;
+    }
+
+    #menu a {
+        width: 20%;
+    }
+
+    main {
+        transform: translateY(49.6px);
+    }
+
+}
+
+@media screen and (max-width: 799px) {
+
+    .header-text {
+        font-size: 0.5em;
+    }
+
+    .header-img {
+        width: 20%;
+    }
+
+    main {
+        margin-bottom: 102.5px;
+    }
+}
