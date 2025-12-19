@@ -137,6 +137,7 @@ main {
     width: 100%;
     background-color: #5C5D5C;
     color: white;
+    margin-bottom: 122.5px;
 }
 
 
@@ -168,6 +169,46 @@ footer {
 .home-content h2, p {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.home-content p {
+    font-size: 1.3em;
+}
+
+.home-content img {
+    width: 25%;
+    height: auto;
+    display: inline-block;
+    float: right;
+    margin: 0px 20px 20px 20px;
+}
+
+/* --- ABOUT PAGE (about.html) --- */
+
+.about-content {
+    display: inline-block;
+    width: 100%;
+}
+
+.about-content h2 {
+    margin-top: 20px;
+}
+
+.about-content h2, p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.about-content p {
+    font-size: 1.3em;
+}
+
+.about-content img {
+    width: 25%;
+    height: auto;
+    display: inline-block;
+    float: right;
+    margin: 0px 20px 20px 20px;
 }
 
 /* --- RESPONSIVES --- */
@@ -209,5 +250,9 @@ footer {
 
     main {
         margin-bottom: 102.5px;
+    }
+
+    .home-content img {
+        width: 80%;
     }
 }
