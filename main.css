@@ -16,6 +16,16 @@ a {
     color: inherit;
 }
 
+.external-links {
+    color: greenyellow;
+    cursor: pointer;
+}
+
+.external-links:hover {
+    color: blue;
+    transition: color 0.3s ease-in-out;
+}
+
 /* HEADER */
 
 header {
