@@ -275,6 +275,20 @@ footer {
     padding: 10px;
 }
 
+#submit {
+    width: 80%;
+    padding: 10px;
+    background-color: #98EB33;
+    color: black;
+    margin: 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
 .open-form #new-blog-entry-form {
 	display: flex;
     flex-direction: column;

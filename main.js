@@ -17,3 +17,40 @@ const newEntryOpen = document.querySelector(".new-blog-entry");
 newEntryButton.addEventListener("click", function () {
     newEntryOpen.classList.toggle("open-form");
 });
+
+/* New Entry Form Submit Button */
+/* Submits the data entered to local storage */
+
+const submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", function () {
+    const title = document.getElementById("title").value;
+    const date = document.getElementById("date").value;
+    const article = document.getElementById("article").value;
+
+    const blogPost = {
+        title: title,
+        date: date,
+        article: article
+    }
+
+    localStorage.setItem(title, JSON.stringify(blogPost));
+
+    document.getElementById("title").value = "";
+    document.getElementById("date").value = "";
+    document.getElementById("article").value = "";
+})
+
+/* Display Saved Blog Posts */
+
+window.addEventListener("load", function () {
+    for (let i = 0; i < localStorage.length; i++) {
+        const displayTitle = localStorage.getItem(title); // Get value by key
+        const displayDate = localStorage.getItem(date);
+        const displayArticle = localStorage.getItem(article);
+        console.log("Title: " + displayTitle);
+        console.log("Date: " + displayDate);
+        console.log("Article: " + displayArticle);
+        console.log("---------------------------");
+    }
+})
