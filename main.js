@@ -44,13 +44,46 @@ submitButton.addEventListener("click", function () {
 /* Display Saved Blog Posts */
 
 window.addEventListener("load", function () {
-    for (let i = 0; i < localStorage.length; i++) {
-        const displayTitle = localStorage.getItem(title); // Get value by key
-        const displayDate = localStorage.getItem(date);
-        const displayArticle = localStorage.getItem(article);
-        console.log("Title: " + displayTitle);
-        console.log("Date: " + displayDate);
-        console.log("Article: " + displayArticle);
-        console.log("---------------------------");
+    for (let i = 0; i < localStorage.length; i++) { // for each item in local storage
+
+        const key = localStorage.key(i); // defines each key in local storage
+
+        const blogPost = JSON.parse(this.localStorage.getItem(key)); // parses JSON string from local storage back into an object that the JavaScript can work with
+
+        console.log("Title: " + blogPost.title); // logs title to console
+        console.log("Date: " + blogPost.date); // logs date to console
+        console.log("Article: " + blogPost.article); // logs article to console
+
+        console.log("---------------------------"); // divider line for readability
+
+        const blogDisplay = document.getElementById("blog-entries-display");
+        const blogContainer = document.createElement("div");
+        const blogEntry = document.createElement("div");
+
+        blogContainer.style.border = "2px solid black";
+        blogContainer.style.backgroundColor = "#5C5D5C";
+        blogContainer.style.color = "white";
+        blogContainer.style.marginBottom = "10px";
+        blogContainer.style.display = "inline-block";
+        blogContainer.style.width = "100%";
+
+        blogEntry.style.margin = "20px";
+
+        blogContainer.appendChild(blogEntry);
+
+        const blogTitle = document.createElement("h2");
+        blogTitle.innerHTML = blogPost.title;
+        blogEntry.appendChild(blogTitle);
+
+        const blogDate = document.createElement("p");
+        blogDate.innerHTML = blogPost.date;
+        blogEntry.appendChild(blogDate);
+
+        const blogArticle = document.createElement("p");
+        blogArticle.innerHTML = blogPost.article;
+        blogEntry.appendChild(blogArticle);
+
+        blogDisplay.appendChild(blogContainer);
+
     }
 })
